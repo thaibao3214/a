@@ -1,0 +1,38 @@
+# Tóm tắt công việc đã thực hiện
+
+## 1. Phân tích và chuẩn bị dữ liệu
+- Tạo script check.py để phân tích dataset
+- Phát hiện 11 lớp động vật với số lượng ảnh không cân bằng
+- Định dạng ảnh: JPEG và PNG
+- Kích thước trung bình: ~400x300 pixels
+
+## 2. Cân bằng dữ liệu
+### Bước 1: Under-sampling
+- Sử dụng balance_dataset.py
+- Giảm số lượng ảnh của các lớp lớn:
+  - Chó: 4,863 → 2,500
+  - Nhện: 4,821 → 2,500
+  - Gà: 3,098 → 2,500
+  - Ngựa: 2,623 → 2,500
+
+### Bước 2: Over-sampling
+- Sử dụng smooth_dataset.py với data augmentation
+- Tăng số lượng ảnh của các lớp nhỏ lên 2,000:
+  - Bò: 1,866 → 2,000
+  - Sóc: 1,862 → 2,000
+  - Cừu: 1,820 → 2,000
+
+## 3. Chia tập dữ liệu
+- Sử dụng split_dataset.py
+- Chia theo tỷ lệ: 70/15/15
+- Tạo 3 thư mục: train, valid, test
+- Dữ liệu được xáo trộn ngẫu nhiên
+
+## Kết quả cuối cùng
+### Cấu trúc thư mục:
+```
+data/
+├── train/  (~70%)
+├── valid/  (~15%)
+└── test/   (~15%)
+```
